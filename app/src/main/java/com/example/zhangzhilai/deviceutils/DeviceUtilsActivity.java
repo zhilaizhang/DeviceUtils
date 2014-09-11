@@ -14,9 +14,17 @@ public class DeviceUtilsActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_device_utils);
         TextView deviceInfoTextView = (TextView)findViewById(R.id.device_info_textview);
-        deviceInfoTextView.setText("SystemVersion" + DeviceUtils.getSystemVersion() + "LocalMacAddress" +
-                DeviceUtils.getLocalMacAddress(this) + "VersionName" + DeviceUtils.getVersionName(this) +
-        "VersionCode" + DeviceUtils.getVersionCode(this) + "PackageName" + DeviceUtils.getPackageName(this));
+        TextView screenInfoTextView = (TextView)findViewById(R.id.screen_info_textview);
+
+        deviceInfoTextView.setText("SystemVersion" + DeviceUtils.getSystemVersion() + '\n'
+                + "LocalMacAddress" + DeviceUtils.getLocalMacAddress(this) + '\n'
+                + "VersionName" + DeviceUtils.getVersionName(this)  + '\n'
+                + "VersionCode" + DeviceUtils.getVersionCode(this) + '\n'
+                + "PackageName" + DeviceUtils.getPackageName(this));
+
+        screenInfoTextView.setText("ScreenWidth" + DeviceUtils.getScreenWidth(this) + '\n'
+                + "ScreenHeight" + DeviceUtils.getScreenHeight(this) + '\n'
+                + "Density" + DeviceUtils.getDensity(this));
     }
 
 
